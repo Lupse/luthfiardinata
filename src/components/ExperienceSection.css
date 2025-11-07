@@ -1,0 +1,257 @@
+.experience-section {
+  width: 100%;
+  padding: 0 5vw;
+}
+
+.experience-timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.experience-item {
+  display: flex;
+  gap: 2rem;
+  position: relative;
+}
+
+.experience-marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 50px;
+  flex-shrink: 0;
+}
+
+.marker-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(217, 164, 65, 0.1);
+  border: 2px solid rgba(217, 164, 65, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #D9A441;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: default;
+  z-index: 2;
+  position: relative;
+}
+
+.experience-item:hover .marker-icon {
+  background: rgba(217, 164, 65, 0.2);
+  border-color: #D9A441;
+  transform: scale(1.15);
+  box-shadow: 0 0 20px rgba(217, 164, 65, 0.3);
+}
+
+.marker-line {
+  width: 2px;
+  height: 3rem;
+  background: linear-gradient(180deg, rgba(217, 164, 65, 0.2), transparent);
+  margin-top: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.experience-item:hover .marker-line {
+  background: linear-gradient(180deg, #D9A441, rgba(217, 164, 65, 0.1));
+  height: 3.5rem;
+}
+
+.experience-content {
+  flex: 1;
+  padding: 1.5rem;
+  border-radius: 10px;
+  background: rgba(217, 164, 65, 0.03);
+  border: 1px solid rgba(217, 164, 65, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.experience-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(217, 164, 65, 0.05), transparent);
+  transition: left 0.5s ease;
+}
+
+.experience-item:hover .experience-content {
+  background: rgba(217, 164, 65, 0.06);
+  border-color: rgba(217, 164, 65, 0.2);
+  box-shadow: 0 8px 24px rgba(217, 164, 65, 0.08);
+}
+
+.experience-item:hover .experience-content::before {
+  left: 100%;
+}
+
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-bottom: 1.2rem;
+  flex-wrap: wrap;
+}
+
+.experience-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #D9A441;
+  margin: 0 0 0.3rem 0;
+  transition: color 0.3s ease;
+}
+
+.experience-item:hover .experience-title {
+  color: #fff;
+}
+
+.experience-company {
+  font-size: 0.95rem;
+  color: #aaa;
+  margin: 0;
+  font-weight: 500;
+}
+
+.experience-period {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: #999;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+
+.experience-period svg {
+  color: #D9A441;
+  stroke-width: 2;
+}
+
+.experience-item:hover .experience-period {
+  color: #D9A441;
+}
+
+.experience-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.experience-list li {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #eee;
+  position: relative;
+  padding-left: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.experience-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: #D9A441;
+  font-weight: bold;
+  opacity: 0.5;
+  transition: all 0.3s ease;
+}
+
+.experience-item:hover .experience-list li {
+  color: #fff;
+}
+
+.experience-item:hover .experience-list li::before {
+  opacity: 1;
+  transform: translateX(3px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .experience-timeline {
+    gap: 2rem;
+  }
+
+  .experience-item {
+    gap: 1.5rem;
+  }
+
+  .experience-marker {
+    width: 40px;
+  }
+
+  .marker-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+  }
+
+  .marker-line {
+    height: 2.5rem;
+  }
+
+  .experience-content {
+    padding: 1.2rem;
+  }
+
+  .experience-header {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .experience-title {
+    font-size: 1.1rem;
+  }
+
+  .experience-company {
+    font-size: 0.9rem;
+  }
+
+  .experience-period {
+    font-size: 0.8rem;
+  }
+
+  .experience-list {
+    gap: 0.6rem;
+  }
+
+  .experience-list li {
+    font-size: 0.9rem;
+    padding-left: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .experience-marker {
+    width: 35px;
+  }
+
+  .marker-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .marker-icon svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .experience-title {
+    font-size: 1rem;
+  }
+
+  .experience-list li {
+    font-size: 0.85rem;
+  }
+}

@@ -164,11 +164,7 @@ export default function Footer() {
               © {currentYear} Luthfi Ardinata. All rights reserved.
             </p>
           </div>
-          <div className="footer-credit">
-            <p>
-              Made with <HeartIcon /> by Luthfi
-            </p>
-          </div>
+          
         </div>
       </div>
     </footer>
